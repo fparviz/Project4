@@ -459,18 +459,18 @@ var resizePizzas = function(size) {
           newwidth = 33.3;
         break;
       case "3":
-          newidth = 50;
+          newwidth = 50;
         break;
       default :
         console.log("error");
     }
 
 // Calculate pizzas variable
-
+    var len;
 
     var pizzas = document.getElementsByClassName("randomPizzaContainer");
-
-    for (var i = 0; i < pizzas.length; i++) {
+    //save the array length in a local variable len
+    for (var i = 0; len = pizzas.length; i < len; i++) {
 
       pizzas[i].style.width =  newwidth + "%";
      }
@@ -529,7 +529,7 @@ function animationReadyCheck() {
 
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
-  var top, constArray, numPizzas, phase;
+  var top, constArray, numPizzas, phase, len;
   frame++;
   window.performance.mark("mark_start_frame");
 
@@ -540,7 +540,8 @@ function updatePositions() {
   }
 
   numPizzas =  document.getElementsByClassName('mover');
-  for (var i = 0; i < numPizzas.length; i++) {
+  //saved the array length in a local variable
+  for (var i = 0; len = numPizzas.length; i < len; i++) {
     phase = constArray[i%5];
     numPizzas[i].style.transform = 'translate3d(' + (100 * phase) + 'px, 0, 0)';
   }
@@ -563,16 +564,22 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
+//Declared the elem variable outside the for loop
+  var elem;
+
+//Added the document.getElementById() API. Moved DOM call outside the for statement and saved it into a local variable
+document.addEventListener('DOMContentLoaded', function() {
+  var movingPizzas = document.getElementById('movingPizzas1');
   //changed the iteration count from 200
   for (var i = 0; i < 35; i++) {
-    var elem = document.createElement('img');
+    elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    movingPizzas.appendChild(elem);
   }
   updatePositions();
 });
