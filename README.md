@@ -9,13 +9,18 @@ Resources used for project:
 2. Udacity class on Browser Rendering Optimization
 3. Udacity P4 Forum discussions
 
+Changes in this submission:
+
+1. Moved the dist folder to top directory and added minified js and css files to that folder
+2. Fixed bugs in main.js
+
 
 How to Run:
 
 Part 1:
 
 1. Ran PageSpeed to optimize.
-2. I placed the CSS and JS minified files in dist folder as mentioned by the last project reviewer. 
+2. I placed the CSS and JS minified files in dist folder as mentioned by the last project reviewer.
 
 Part 2:
 

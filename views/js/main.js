@@ -470,7 +470,8 @@ var resizePizzas = function(size) {
 
     var pizzas = document.getElementsByClassName("randomPizzaContainer");
     //save the array length in a local variable len
-    for (var i = 0; len = pizzas.length; i < len; i++) {
+    len = pizzas.length;
+    for (var i = 0; i < len; i++) {
 
       pizzas[i].style.width =  newwidth + "%";
      }
@@ -541,7 +542,8 @@ function updatePositions() {
 
   numPizzas =  document.getElementsByClassName('mover');
   //saved the array length in a local variable
-  for (var i = 0; len = numPizzas.length; i < len; i++) {
+  len = numPizzas.length;
+  for (var i = 0;  i < len; i++) {
     phase = constArray[i%5];
     numPizzas[i].style.transform = 'translate3d(' + (100 * phase) + 'px, 0, 0)';
   }
@@ -560,16 +562,15 @@ function updatePositions() {
 // runs updatePositions on scroll
 window.addEventListener('scroll', updatePositions);
 
-// Generates the sliding pizzas when the page loads.
-document.addEventListener('DOMContentLoaded', function() {
-  var cols = 8;
-  var s = 256;
-//Declared the elem variable outside the for loop
-  var elem;
 
+// Generates the sliding pizzas when the page loads.
 //Added the document.getElementById() API. Moved DOM call outside the for statement and saved it into a local variable
 document.addEventListener('DOMContentLoaded', function() {
-  var movingPizzas = document.getElementById('movingPizzas1');
+   var cols = 8;
+   var s = 256;
+//Declared the elem variable outside the for loop
+   var elem;
+   var movingPizzas = document.getElementById('movingPizzas1');
   //changed the iteration count from 200
   for (var i = 0; i < 35; i++) {
     elem = document.createElement('img');
