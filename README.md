@@ -11,8 +11,12 @@ Resources used for project:
 
 Changes in this submission:
 
-1. Moved the dist folder to top directory and added minified js and css files to that folder
-2. Fixed bugs in main.js
+1. As for my last submission I was told to move the minified version of the JS and CSS files to dist folder, I forgot to add that change of location in index.html and hence the performance scores decreased. I have made the change to show the correct location of the files.
+2. As I am using the translateX property of the transform function, made the change as suggested by the reviewer in /views/js/main.js line 581 from
+	elem.basicLeft = (i % cols) * s to
+	elem.style.left = (i % cols) * s + 'px'
+3. As suggested by the reviewers, added vendor prefixes to line 36 of views/css/style.css by using Autoprefixer tool.
+
 
 
 How to Run:
