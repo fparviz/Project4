@@ -10,6 +10,12 @@ Resources used for project:
 3. Udacity P4 Forum discussions
 
 Changes in this submission:
+1. Added media attribute print for print.css
+2. Made Google Analytics script Async
+3. Loaded the Google Fonts Asynchronously through WebFontConfig API
+4. Used gulp-inline-css plugin to inline style.css in index.html
+
+Changes in previous submission:
 
 1. As for my last submission I was told to move the minified version of the JS and CSS files to dist folder, I forgot to add that change of location in index.html and hence the performance scores decreased. I have made the change to show the correct location of the files.
 2. As I am using the translateX property of the transform function, made the change as suggested by the reviewer in /views/js/main.js line 581 from
@@ -28,9 +34,10 @@ Part 1:
 
 Part 2:
 
-1. Visit my GitHub Page https://github.com/fparviz/Project4
-2. Open the file 'index.html'
+1. Download the repository from my GitHub Page https://github.com/fparviz/Project4
+2. In the folder 'views', open the html file 'pizza.html' using Google Chrome
 3. Scroll the website to see the pizza animation
+
 
 Optimizations made in views/js/main.js:
 
